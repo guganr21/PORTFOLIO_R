@@ -8,8 +8,8 @@
 
 /* THEMES */
 body.dark {
-  --bg: #000000;        /* pure black background */
-  --text: #e5e5e5;      /* light text */
+  --bg:#e5e5e5;       /* pure black background */
+  --text:#000000;      /* light text */
   --card: #0f0f0f;      /* dark cards */
   --accent: #ff1a1a;    /* bright red */
 }
