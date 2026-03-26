@@ -5,20 +5,19 @@
   font-family: 'Segoe UI', sans-serif;
 }
 
-
 /* THEMES */
 body.dark {
-  --bg:#e5e5e5;       /* pure black background */
-  --text:#000000;      /* light text */
-  --card: #0f0f0f;      /* dark cards */
-  --accent: #ff1a1a;    /* bright red */
+  --bg: #0b0f19;
+  --text: #b0c3dd;
+  --card: #111827;
+  --accent: #2c2abe;
 }
 
 body.light {
-  --bg: #1a0000;        /* dark red background */
-  --text: #ffffff;      
-  --card: #330000;      /* deep red cards */
-  --accent: #ff3333;    /* red accent */
+  --bg: #f8fafc;
+  --text: #0f172a;
+  --card: #ffffff;
+  --accent: #eb5325;
 }
 
 body {
