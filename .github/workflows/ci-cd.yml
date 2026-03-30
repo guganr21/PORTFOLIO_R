@@ -1,0 +1,56 @@
+name: CI-CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  # -----------------------
+  # CI (Continuous Integration)
+  # -----------------------
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install Backend Dependencies
+        run: |
+          cd backend
+          npm install
+
+      - name: Run Backend Check
+        run: |
+          cd backend
+          node server.js &
+          sleep 5
+
+      - name: Validate Frontend Files
+        run: |
+          ls frontend
+
+  # -----------------------
+  # CD (Continuous Deployment)
+  # -----------------------
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # Example: Deploy to Render / Vercel / Railway
+      # Choose ONE deployment platform
+
+      - name: Deploy Message
+        run: echo "Ready to deploy to hosting platform"
